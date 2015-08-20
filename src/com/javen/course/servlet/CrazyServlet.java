@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.javen.course.service.CoreService;
 import com.javen.course.util.SignUtil;
 
 /**
@@ -43,5 +44,15 @@ public class CrazyServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // TODO 消息的接收、处理、响应  
+    	request.setCharacterEncoding("UTF-8");  
+        response.setCharacterEncoding("UTF-8");  
+  
+        // 调用核心业务类接收消息、处理消息  
+        String respMessage = CoreService.processRequest(request);  
+          
+        // 响应消息  
+        PrintWriter out = response.getWriter();  
+        out.print(respMessage);  
+        out.close();  
     }
 }

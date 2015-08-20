@@ -137,7 +137,7 @@ public class MessageUtil {
 	/**
 	 * 音乐消息对象转换成xml
 	 * 
-	 * @param musicMessage 音乐消息对象
+	 * @param musicMessage 音乐消息e对象
 	 * @return xml
 	 */
 	public static String musicMessageToXml(MusicMessage musicMessage) {
