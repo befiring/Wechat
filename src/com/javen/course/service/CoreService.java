@@ -1,5 +1,6 @@
 package com.javen.course.service;
 
+import java.awt.image.RescaleOp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -53,7 +54,10 @@ public class CoreService {
 					respContent = mContent;
 				} else if ("超链接".equals(mContent)) {
 					respContent = "欢迎访问<a href=\"http://blog.csdn.net/lyq8479\">我的博客</a>!";
-				} else {
+				} else if("下载".equals(mContent)){
+					respContent="<a href=\"http://mp.weixin.qq.com/mp/redirect?url=http://interest.libaclub.com/facade.php?act=download\">点击下载</a>";
+				}
+					else {
 					respContent = "您发送的是文本消息！";
 				}
 			}
@@ -88,6 +92,16 @@ public class CoreService {
 				// 自定义菜单点击事件
 				else if (eventType.equals(MessageUtil.EVENT_TYPE_CLICK)) {
 					// TODO 自定义菜单权没有开放，暂不处理该类消息
+					String eventKey=requestMap.get("EventKey");
+					if(eventKey.equals("V1001_TODAY_MUSIC")){
+						respContent="“今日歌曲被点击！”";
+					}
+					if(eventKey.equals("V1001_TODAY_SINGER")){
+						respContent="“歌手简介被点击！”";
+					}
+					if(eventKey.equals("V1001_GOOD")){
+						respContent="“赞一下我们被点击！”";
+					}
 				}
 			}
 
