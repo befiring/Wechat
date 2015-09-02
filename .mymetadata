@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="WeChat"
-  id="myeclipse.1439884068413"
-  context-root="/WeChat"
+  name="WechatPrint"
+  id="myeclipse.1440549581332"
+  context-root="/WechatPrint"
   j2ee-spec="5.0"
-  archive="WeChat.war">
+  archive="WechatPrint.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>
